@@ -1,0 +1,174 @@
+/* ==========================================================================
+   GramaGuide — Accessibility Modes
+   Large Text Mode, High Contrast Mode (WCAG AAA), and Reduced Motion
+   ========================================================================== */
+
+/* 1. Large Text Mode */
+body.large-text {
+  font-size: 1.35rem; /* 21.6px baseline */
+  line-height: 1.7;
+}
+
+body.large-text .step-heading,
+body.large-text .hero-text h2 {
+  font-size: 2.2rem;
+}
+
+body.large-text .btn-primary,
+body.large-text .btn-secondary,
+body.large-text .btn-success,
+body.large-text .btn-danger {
+  padding: 18px 28px;
+  font-size: 1.3rem;
+}
+
+body.large-text .cat-card h3 {
+  font-size: 1.5rem;
+}
+
+body.large-text .cat-desc {
+  font-size: 1.15rem;
+}
+
+body.large-text .nav-item {
+  font-size: 1.25rem;
+  padding: 18px 20px;
+}
+
+body.large-text .tip-text {
+  font-size: 1.35rem;
+}
+
+/* 2. High Contrast Mode (Crisp Black/Yellow/White) */
+body.high-contrast {
+  --color-bg: #000000;
+  --color-surface: #121212;
+  --color-surface-hover: #242424;
+  --color-text-main: #FFFFFF;
+  --color-text-muted: #E0E0E0;
+  --color-border: #FFFF00;
+  --color-primary: #FFD600;
+  --color-primary-dark: #FFC400;
+  --color-primary-light: #2A2400;
+  --color-secondary: #00E676;
+  --color-secondary-light: #003314;
+}
+
+body.high-contrast .app-header {
+  background: #000000;
+  border-bottom: 3px solid #FFFF00;
+}
+
+body.high-contrast .sidebar-nav {
+  background: #000000;
+  border-right: 3px solid #FFFF00;
+}
+
+body.high-contrast .mobile-bottom-nav {
+  background: #000000;
+  border-top: 3px solid #FFFF00;
+}
+
+body.high-contrast .cat-card,
+body.high-contrast .confidence-card,
+body.high-contrast .lesson-view-container,
+body.high-contrast .quiz-card,
+body.high-contrast .settings-card,
+body.high-contrast .scam-box,
+body.high-contrast .checklist-container {
+  background: #111111;
+  border: 3px solid #FFFF00;
+  color: #FFFFFF;
+}
+
+body.high-contrast .btn-primary {
+  background: #FFFF00;
+  color: #000000;
+  border: 2px solid #FFFFFF;
+  font-weight: 900;
+}
+
+body.high-contrast .btn-secondary {
+  background: #000000;
+  color: #FFFF00;
+  border: 2px solid #FFFF00;
+}
+
+body.high-contrast .hero-card {
+  background: #1A1A00;
+  border: 3px solid #FFFF00;
+}
+
+body.high-contrast .hero-text h2 {
+  color: #FFFF00;
+}
+
+body.high-contrast .tip-banner {
+  background: #241D00;
+  border: 3px solid #FFFF00;
+  color: #FFFFFF;
+}
+
+body.high-contrast .tip-text {
+  color: #FFFFFF;
+}
+
+body.high-contrast .brand-text h1 {
+  color: #FFFF00;
+}
+
+body.high-contrast .cat-pill-btn {
+  background: #000000;
+  color: #FFFFFF;
+  border: 2px solid #FFFF00;
+}
+
+body.high-contrast .cat-pill-btn.active {
+  background: #FFFF00;
+  color: #000000;
+  border-color: #FFFFFF;
+}
+
+body.high-contrast .cat-icon-box {
+  background: #222222;
+  border: 2px solid #FFFF00;
+}
+
+body.high-contrast .cat-badge {
+  border: 1px solid #FFFF00;
+}
+
+body.high-contrast .cat-arrow-circle {
+  background: #FFFF00;
+  color: #000000;
+}
+
+body.high-contrast .floating-voice-bar {
+  background: #000000;
+  border: 2px solid #FFFF00;
+}
+
+/* 3. Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body.reduce-motion *,
+body.reduce-motion *::before,
+body.reduce-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* 4. Focus Ring Accessibility */
+:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
+}

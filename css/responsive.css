@@ -1,0 +1,170 @@
+/* ==========================================================================
+   GramaGuide — Responsive Mobile-First Stylesheet
+   Adapts for low-end phones (320px) up to desktop widescreen (1440px)
+   ========================================================================== */
+
+/* Mobile Bottom Navigation Bar (< 768px) */
+.mobile-bottom-nav {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 68px;
+  background: var(--color-surface);
+  border-top: 2px solid var(--color-border);
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
+  z-index: 1000;
+  justify-content: space-around;
+  align-items: center;
+  padding: 4px 6px;
+}
+
+.mobile-nav-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  flex: 1;
+  height: 100%;
+  border-radius: var(--radius-sm);
+  transition: color 0.15s;
+}
+
+.mobile-nav-link .mobile-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
+.mobile-nav-link.active {
+  color: var(--color-primary);
+  font-weight: 800;
+}
+
+/* ----------------- Breakpoint: Under 768px (Mobile & Small Tablets) ----------------- */
+@media screen and (max-width: 768px) {
+  .sidebar-nav {
+    display: none; /* Hide desktop sidebar */
+  }
+
+  .mobile-bottom-nav {
+    display: flex; /* Show ergonomic thumb-friendly bottom nav */
+  }
+
+  .main-content {
+    padding: var(--spacing-md) var(--spacing-sm) 130px; /* Leave room for bottom bar and voice widget */
+  }
+
+  .header-container {
+    padding: 8px 12px;
+  }
+
+  .brand-text .brand-tagline {
+    display: none; /* Hide tagline on tiny headers */
+  }
+
+  .lang-btn {
+    padding: 4px 8px;
+    font-size: 0.85rem;
+  }
+
+  .hero-card {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: var(--spacing-md);
+  }
+
+  .hero-illustration {
+    font-size: 3.8rem;
+  }
+
+  .hero-text h2 {
+    font-size: 1.6rem;
+  }
+
+  .categories-grid {
+    grid-template-columns: 1fr; /* Single column on phones */
+    gap: var(--spacing-md);
+  }
+
+  .stages-stepper {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .simulated-phone {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .interests-selection-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cat-nav-arrow {
+    display: none; /* On phones, touch scrolling is natural; hide arrows to give full width to pills */
+  }
+}
+
+/* ----------------- Breakpoint: 320px to 375px (Very small budget phones) ----------------- */
+@media screen and (max-width: 375px) {
+  html {
+    font-size: 15px; /* Slightly compact baseline for 320px */
+  }
+
+  .brand-logo-icon {
+    font-size: 1.8rem;
+  }
+
+  .brand-text h1 {
+    font-size: 1.15rem;
+  }
+
+  .status-badge {
+    padding: 4px 8px;
+    font-size: 0.75rem;
+  }
+
+  .mobile-nav-link .mobile-icon {
+    font-size: 1.3rem;
+  }
+
+  .mobile-nav-link {
+    font-size: 0.7rem;
+  }
+}
+
+/* ----------------- Breakpoint: 769px to 1024px (Tablets / Laptops) ----------------- */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .sidebar-nav {
+    width: 220px;
+    padding: var(--spacing-md) 8px;
+  }
+
+  .nav-item {
+    font-size: 0.95rem;
+    padding: 10px 12px;
+  }
+
+  .categories-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+  }
+}
+
+/* ----------------- Breakpoint: 1025px+ (Desktop & Big Screens) ----------------- */
+@media screen and (min-width: 1025px) {
+  .categories-grid {
+    grid-template-columns: repeat(auto-fill, minmax(295px, 1fr));
+    gap: var(--spacing-lg);
+  }
+
+  .stages-stepper {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

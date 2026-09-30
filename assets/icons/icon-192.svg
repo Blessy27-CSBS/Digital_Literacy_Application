@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="192" height="192">
+  <rect width="192" height="192" rx="40" fill="#D9531E"/>
+  <circle cx="96" cy="96" r="76" fill="#FFF6EE" opacity="0.15"/>
+  <!-- Smartphone Outline -->
+  <rect x="52" y="32" width="88" height="128" rx="16" fill="#FFFFFF" stroke="#2E7D32" stroke-width="6"/>
+  <!-- Screen Area -->
+  <rect x="60" y="48" width="72" height="96" rx="8" fill="#FBF9F5"/>
+  <!-- Sprout / Wheat Leaves (Rural Literacy) -->
+  <path d="M96 115 C96 90, 72 80, 72 80 C72 80, 92 84, 96 100 C100 84, 120 80, 120 80 C120 80, 96 90, 96 115 Z" fill="#2E7D32"/>
+  <line x1="96" y1="100" x2="96" y2="124" stroke="#D9531E" stroke-width="4" stroke-linecap="round"/>
+  <!-- Phone Speaker & Home Button -->
+  <circle cx="96" cy="40" r="3" fill="#A0AEC0"/>
+  <circle cx="96" cy="151" r="4" fill="#A0AEC0"/>
+</svg>

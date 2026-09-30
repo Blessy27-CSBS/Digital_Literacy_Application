@@ -1,0 +1,26 @@
+{
+  "name": "GramaGuide — Digital Literacy Companion",
+  "short_name": "GramaGuide",
+  "description": "Offline-First Rural Digital Literacy Application: See it, Hear it, Try it, Master it.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#FBF9F5",
+  "theme_color": "#D9531E",
+  "categories": ["education", "productivity", "utilities"],
+  "icons": [
+    {
+      "src": "./assets/icons/icon-192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./assets/icons/icon-512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

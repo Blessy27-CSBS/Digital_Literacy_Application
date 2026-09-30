@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <meta name="theme-color" content="#D9531E">
+  <meta name="description"
+    content="GramaGuide — Offline-first visual Digital Literacy Companion for rural communities. Learn smartphone basics, UPI payments, cyber safety, farming tools, and government services easily.">
+  <title>GramaGuide — Digital Literacy Companion | கிராம கைடு | ग्रामगाइड</title>
+
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/icon-192.svg">
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.svg">
+
+  <!-- Typography: Modern Google Fonts with offline system fallbacks -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700;800&family=Noto+Sans+Tamil:wght@400;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/accessibility.css">
+</head>
+
+<body>
+  <!-- Accessible Skip Link -->
+  <a href="#main-router-viewport" class="skip-link" data-i18n="skipLink">Skip to learning content</a>
+
+  <!-- Offline / Online Notification Banner -->
+  <aside id="offline-status-banner" class="offline-banner" role="status" aria-live="polite">
+    <span id="offline-banner-message" data-i18n="offlineBannerText">You are in Offline Mode. All lessons and tools
+      remain available!</span>
+  </aside>
+
+  <!-- Application Header -->
+  <header class="app-header" role="banner">
+    <div class="header-container">
+      <!-- Brand Logo -->
+      <a href="#home" class="brand-link" aria-label="GramaGuide Home">
+        <span class="brand-logo-icon">🌾📱</span>
+        <div class="brand-text">
+          <h1 data-i18n="appName">GramaGuide</h1>
+          <span class="brand-tagline" data-i18n="tagline">Digital Literacy Companion</span>
+        </div>
+      </a>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <!-- Online/Offline Badge -->
+        <div class="status-badge" id="network-status-badge" title="Network connectivity status">
+          <span class="status-dot"></span>
+          <span id="network-status-text" data-i18n="onlineStatus">Online</span>
+        </div>
+
+        <!-- Language Selector -->
+        <div class="lang-selector" role="group" aria-label="Select Language">
+          <button class="lang-btn active" data-lang="en" onclick="setLanguage('en')">EN</button>
+          <button class="lang-btn" data-lang="ta" onclick="setLanguage('ta')">தமிழ்</button>
+          <button class="lang-btn" data-lang="hi" onclick="setLanguage('hi')">हिन्दी</button>
+        </div>
+
+        <!-- Voice Query Assistant Trigger -->
+        <button id="header-voice-btn" class="voice-assistant-btn" title="Talk to GramaGuide"
+          aria-label="Talk to GramaGuide" onclick="GramaVoice.toggleVoiceListening()">
+          🎤
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Layout App Shell -->
+  <div class="app-shell">
+    <!-- Desktop Sidebar Navigation -->
+    <nav class="sidebar-nav" role="navigation" aria-label="Main Desktop Navigation">
+      <a href="#home" class="nav-item active">
+        <span class="nav-icon">🏠</span>
+        <span data-i18n="navHome">Home</span>
+      </a>
+      <a href="#learn" class="nav-item">
+        <span class="nav-icon">📚</span>
+        <span data-i18n="navLearn">Learn Skills</span>
+      </a>
+      <a href="#practice" class="nav-item">
+        <span class="nav-icon">🎯</span>
+        <span data-i18n="navPractice">Practice & Quizzes</span>
+      </a>
+      <a href="#scam-detector" class="nav-item">
+        <span class="nav-icon">🕵️</span>
+        <span data-i18n="navScam">Is This Safe?</span>
+      </a>
+      <a href="#phone-doctor" class="nav-item">
+        <span class="nav-icon">📱</span>
+        <span data-i18n="navDoctor">Phone Doctor</span>
+      </a>
+      <a href="#family" class="nav-item">
+        <span class="nav-icon">👨‍👩‍👧</span>
+        <span data-i18n="navFamily">Teach Family</span>
+      </a>
+      <a href="#progress" class="nav-item">
+        <span class="nav-icon">📊</span>
+        <span data-i18n="navProgress">Progress & Badges</span>
+      </a>
+      <a href="#settings" class="nav-item">
+        <span class="nav-icon">⚙️</span>
+        <span data-i18n="navSettings">Settings</span>
+      </a>
+    </nav>
+
+    <!-- Main Viewport Router Container -->
+    <main id="main-router-viewport" class="main-content" role="main" tabindex="-1">
+      <!-- Dynamic views rendered by js/router.js -->
+    </main>
+  </div>
+
+  <!-- Mobile Bottom Navigation Bar (< 768px) -->
+  <nav class="mobile-bottom-nav" role="navigation" aria-label="Mobile Navigation">
+    <a href="#home" class="mobile-nav-link active">
+      <span class="mobile-icon">🏠</span>
+      <span data-i18n="navHome">Home</span>
+    </a>
+    <a href="#learn" class="mobile-nav-link">
+      <span class="mobile-icon">📚</span>
+      <span data-i18n="navLearn">Learn</span>
+    </a>
+    <a href="#practice" class="mobile-nav-link">
+      <span class="mobile-icon">🎯</span>
+      <span data-i18n="navPractice">Practice</span>
+    </a>
+    <a href="#scam-detector" class="mobile-nav-link">
+      <span class="mobile-icon">🕵️</span>
+      <span data-i18n="navScam">Scam?</span>
+    </a>
+    <a href="#settings" class="mobile-nav-link">
+      <span class="mobile-icon">⚙️</span>
+      <span data-i18n="navSettings">Settings</span>
+    </a>
+  </nav>
+
+  <!-- Application Footer -->
+  <footer class="app-footer" role="contentinfo">
+    <div style="max-width:1200px; margin:0 auto;" data-i18n="footerText">
+      GramaGuide — Offline-First Rural Digital Literacy Companion. Empowering communities with safe, tactile, visual
+      digital skills. Works 100% offline without login.
+    </div>
+  </footer>
+
+  <!-- Core Data Content Scripts -->
+  <script src="data/lessons.js"></script>
+  <script src="data/quizzes.js"></script>
+  <script src="data/tips.js"></script>
+
+  <!-- Feature Modules & Localization -->
+  <script src="js/translations.js"></script>
+  <script src="js/progress.js"></script>
+  <script src="js/offline.js"></script>
+  <script src="js/syncManager.js"></script>
+  <script src="js/voice.js"></script>
+  <script src="js/scamDetector.js"></script>
+  <script src="js/phoneDoctor.js"></script>
+  <script src="js/lessons.js"></script>
+  <script src="js/quiz.js"></script>
+  <script src="js/router.js"></script>
+
+  <!-- App Bootstrap -->
+  <script src="js/app.js"></script>
+</body>
+
+</html>
